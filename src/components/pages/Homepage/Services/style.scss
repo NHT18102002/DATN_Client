@@ -1,0 +1,14 @@
+
+
+.title {
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+}

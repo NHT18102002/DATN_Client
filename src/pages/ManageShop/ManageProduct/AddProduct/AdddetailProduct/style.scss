@@ -1,0 +1,14 @@
+.AttributeValueForm>div>div>div>div>div{
+    display: flex;
+    gap: 5px !important;
+    align-items: center
+};
+.AttributeValueForm>div{
+    // width: 250px !important;
+    margin-right: 0 !important;
+}
+.AttributeValueForm{
+    display: flex;
+    // align-items: center !important;
+    gap: 10px !important;
+};

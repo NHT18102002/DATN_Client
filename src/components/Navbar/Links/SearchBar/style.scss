@@ -1,0 +1,19 @@
+.search {
+  width: 600px;
+}
+.search > span > span:nth-child(2) > button {
+  width: 80px !important;
+  // height:9% !important;
+}
+
+.search > span > span:nth-child(2) {
+  width: 80px !important;
+  // height:90% !important;
+}
+.search > span > span:nth-child(2) > button {
+  width: 80px !important;
+  // height:100% !important;
+  @media (max-width: 991px) {
+    // opacity: 0;
+  }
+}

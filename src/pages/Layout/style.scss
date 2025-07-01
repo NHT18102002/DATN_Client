@@ -1,0 +1,23 @@
+.container {
+  min-height: 60vh;
+  margin: 2rem 10rem 3rem 10rem;
+  @media (max-width: 1500px) {
+    margin: 2rem 5rem 3rem 5rem;
+  }
+  @media (max-width: 768px) {
+    margin: 2rem 2rem 3rem 2rem;
+  }
+}
+
+.container-manage-shop {
+  min-height: 60vh;
+  margin: 0rem 1rem 0rem 0rem;
+  @media (max-width: 1500px) {
+    margin: 0rem 1rem 0rem 0rem;
+  }
+  @media (max-width: 768px) {
+    margin: 0rem 1rem 0rem 0rem;
+  }
+}
+
+

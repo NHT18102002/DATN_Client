@@ -1,0 +1,21 @@
+.AttributeValueForm>div>div>div{
+    display: flex;
+    gap: 5px !important;
+    align-items: center !important
+};
+
+
+.AttributeValueForm>div{
+    // width: 250px !important;
+    margin-right: 0 !important;
+}
+.AttributeValueForm{
+    display: flex;
+    gap: 10px !important;
+    align-items: center
+};
+
+.AttributeValueForm>div>div>div>div>div:nth-child(1){
+    display: flex !important;
+    align-items: start !important
+};

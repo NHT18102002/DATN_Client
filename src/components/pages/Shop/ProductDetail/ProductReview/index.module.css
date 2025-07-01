@@ -1,0 +1,102 @@
+.ProductReview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.tittle {
+  /* color: aquamarine; */
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+}
+.Review {
+  /* width: 100%; */
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  gap: 10px;
+}
+.review {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 10px;
+  /* align-items: flex-start; */
+}
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* margin-right: 10px; */
+}
+.img {
+  margin-top: 5px;
+  /* padding-right: ;: 10px; */
+}
+.avatar:hover {
+  cursor: pointer;
+}
+.img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.img:hover {
+  cursor: pointer;
+}
+
+.review {
+  .tittlReview {
+    display: flex;
+    flex-direction: column;
+    gap: px;
+    .ownerName {
+      text-align: left;
+      font-size: 12px;
+      color: #000;
+      font-weight: 500;
+      font-style: italic;
+    }
+    .date {
+      text-align: left;
+      color: rgba(0, 0, 0, 0.54);
+      font-size: 12px;
+    }
+    .rateStar {
+      text-align: left;
+      font-size: 12px;
+      color: #d0011b;
+    }
+    .rateStar > li {
+      margin-right: 2px !important;
+      line-height: 100%;
+    }
+  }
+}
+.contentReview {
+  text-align: start;
+}
+
+.mySwiper2 {
+}
+.imagetReview {
+  display: flex;
+  justify-self: flex-start;
+}
+
+.listImage {
+  display: flex;
+  gap: 13px;
+}
+.rateStarAll {
+  text-align: left;
+  font-size: 20px;
+  color: #d0011b;
+}
+.rateStarAll li {
+margin-right: 0 !important;
+}
+
