@@ -139,7 +139,7 @@ const Category = () => {
               style={{ position: "relative", height: "300px", width: "100%" }}
             >
               <Swiper
-                slidesPerView={10}
+                slidesPerView={5}
                 slidesPerGroup={5}
                 spaceBetween={0}
                 navigation

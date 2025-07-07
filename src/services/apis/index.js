@@ -2,6 +2,7 @@ export const SHOP_API = {
   GET_LIST_PRODUCT: "/products/all", //
   GET_FILTER_PRODUCT: "/products", //
   GET_LIST_SHOP: "/shops",
+  GET_FILTER_SHOP:"/shops/search",
   GET_SHOP_OWNER: "/shops/my-shop",
   GET_SHOP_BY_PRODUCTID: "/shops/shop-product",
   GET_DETAIL_PRODUCT: "/products/:id",
@@ -22,6 +23,7 @@ export const SHOP_API = {
   CREATE_ATTRIBUTE_VALUES: "/product-details/values",
   CREATE_PRICE_PODUCT_DETAIL: "/product-details/selections",
   UPDATE_PRODUCT: "/products/update/:id",
+  UPDATE_PRODUCT_STATUS: "/products/update-status/:id",
   UPDATE_SHOP: "/shops/:id",
   UPDATE_PRODUCT_DETAIL: "/product-details/:id",
   UPDATE_ATTRIBUTE: "/product-details/attributes/:id",

@@ -11,6 +11,12 @@ export const getFilterProducts = async (params) => {
   });
 };
 
+export const getFilterShops = async (params) => {
+  return instanceCoreApi.get(SHOP_API.GET_FILTER_SHOP, {
+    params,
+  });
+};
+
 export const getDetailShop = async (id) => {
   return instanceCoreApi.get(SHOP_API.GET_DETAIL_SHOP(id));
 };
@@ -103,6 +109,13 @@ export const createPriceProductDetail = async (data) => {
 export const updateProduct = async (id, data) => {
   return instanceCoreApi.patch(
     SHOP_API.UPDATE_PRODUCT.replace(":id", id),
+    data
+  );
+};
+
+export const updateProductStatus = async (id, data) => {
+  return instanceCoreApi.patch(
+    SHOP_API.UPDATE_PRODUCT_STATUS.replace(":id", id),
     data
   );
 };

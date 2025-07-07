@@ -79,7 +79,15 @@ const ManageShop = () => {
             message.success(`${file.name} tải file thành công.`);
 
             const currentBanners = form.getFieldValue("banners") || [];
-            form.setFieldValue("banners", [...currentBanners, data]);
+            form.setFieldValue("banner", data);
+            setBannerFileList([
+              {
+                uid: new Date().getTime().toString(),
+                name: file.name,
+                status: "done",
+                url: data,
+              },
+            ]);
           } else {
             onError(`${file.name} file upload failed.`);
           }
@@ -137,12 +145,21 @@ const ManageShop = () => {
           }
         )
         .then((res) => {
-          console.log({ res });
+          // console.log({ res });
           if (res) {
             onSuccess(file);
             const data = res?.data?.url;
             console.log({ data });
             form.setFieldValue("logo", data);
+
+            setLogoFileList([
+              {
+                uid: new Date().getTime().toString(),
+                name: file.name,
+                status: "done",
+                url: data,
+              },
+            ]);
             setFileList([
               { uid: "-1", name: "image.png", status: "done", url: data },
             ]);
@@ -251,7 +268,7 @@ const ManageShop = () => {
         ]);
       }
 
-      if (shop.banners.length > 0) {
+      if (shop?.banners?.length > 0) {
         setBannersFileList(
           shop.banners.map((url) => ({
             uid: url,
@@ -338,6 +355,7 @@ const ManageShop = () => {
                           name="banner"
                           valuePropName="bannerFileList"
                           style={{ marginBottom: 0 }}
+                          width="100%"
                           // getValueFromEvent={normFile}
                         >
                           <Upload
@@ -354,25 +372,20 @@ const ManageShop = () => {
                                 alt="banner"
                                 style={{
                                   width: "100%",
-                                  // height: 180,
                                   objectFit: "cover",
-                                  // borderRadius: 8,
                                 }}
                               />
                             ) : (
-                              <div
+                              <Image
+                                preview={false}
+                                src="https://www.shutterstock.com/image-photo/modern-grey-limestone-texture-background-260nw-2628427379.jpg"
+                                alt="banner"
                                 style={{
                                   width: "100%",
-                                  // height: 180,
-                                  background: "#f5f5f5",
-                                  borderRadius: 8,
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
+                                  objectFit: "cover",
+                                  opacity: 0.5,
                                 }}
-                              >
-                                <ShopOutlined style={{ fontSize: 32 }} />
-                              </div>
+                              />
                             )}
                           </Upload>
                         </Form.Item>

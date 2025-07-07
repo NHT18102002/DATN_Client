@@ -52,7 +52,7 @@ const AddProductForm = ({ form, setActiveKey, setProductDetailId }) => {
         // if (fetchProducts) fetchProducts(); // Reload lại danh sách
         if (setActiveKey) setActiveKey("2"); // Chuyển sang tab 2
         const newProductId = res?.data?.data?.id;
-        console.log("newProductId", newProductId);
+        // console.log("newProductId", newProductId);
         setProductDetailId(newProductId);
       }
     } catch (eror) {

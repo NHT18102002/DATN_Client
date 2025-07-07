@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { getFilterProducts } from "../../services/shop.service";
+import { useLocation, Link } from "react-router-dom";
+import { getFilterProducts, getFilterShops } from "../../services/shop.service";
 import useCallApi from "../../hook/useCallApi";
 import ProductCard from "../../components/ProductCard";
+
 import { useWindowSize } from "../../hook/useWindowSize";
 import { Row, Input, Button, Rate, Select, Pagination, Col, Space } from "antd";
 import { SM } from "../../constants";
@@ -16,7 +17,12 @@ const SearchPage = () => {
   const windowSize = useWindowSize();
   const query = useQuery();
   const keyword = query.get("keyword") || "";
-
+  const [shops, setShops] = useState([]);
+  const [shopPagination, setShopPagination] = useState({
+    page: 1,
+    limit: 8,
+    total: 0,
+  });
   const [products, setProducts] = useState([]);
   const [minPrice, setMinPrice] = useState();
   const [maxPrice, setMaxPrice] = useState();
@@ -50,6 +56,19 @@ const SearchPage = () => {
     },
   });
 
+  const { send: fetchSearchShops } = useCallApi({
+    callApi: getFilterShops,
+    success: (res) => {
+      const items = res?.data || [];
+      console.log("items", items);
+      setShops(items);
+      setShopPagination((prev) => ({
+        ...prev,
+        total: res?.data?.total || 0,
+      }));
+    },
+  });
+
   const loadData = (params = {}) => {
     const queryParams = {
       keyword,
@@ -65,7 +84,7 @@ const SearchPage = () => {
   useEffect(() => {
     if (keyword) {
       loadData();
-      
+      fetchSearchShops({ keyword, page: 1, limit: shopPagination.limit });
     }
   }, [keyword, pagination.page, sortBy, sort]);
 
@@ -107,6 +126,60 @@ const SearchPage = () => {
   return (
     <>
       <div>
+        {shops.length > 0 && (
+          <>
+            <h3 style={{ margin: "16px 0" }}>Shop liên quan đến {keyword}</h3>
+            <Row
+              wrap
+              style={{
+                marginBottom: 16,
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "#f5f5f5",
+                padding: "20px",
+              }}
+            >
+              {shops.map((shop) => (
+                <Col key={shop.id} xs={24} sm={12} md={8} lg={6}>
+                  <Link to={`/shop/${shop.id}`}>
+                    <div
+                      style={{
+                        border: "1px solid #d9d9d9",
+                        borderRadius: 8,
+                        padding: 16,
+                        background: "#fff",
+                        height: "100%",
+                      }}
+                    >
+                      <h4>{shop.name}</h4>
+                      {shop.logo && (
+                        <img
+                          src={shop.logo}
+                          alt={shop.name}
+                          style={{
+                            cursor: "pointer",
+                            width: "100%",
+                            maxHeight: 120,
+                            objectFit: "cover",
+                            borderRadius: 4,
+                          }}
+                        />
+                      )}
+                      <p style={{ margin: "8px 0" }}>
+                        {shop.description || "Không có mô tả"}
+                      </p>
+                      <Link to={`/shop/${shop.id}`}>
+                        <Button style={{ border: "1px solid red" }}>
+                          Xem shop
+                        </Button>
+                      </Link>
+                    </div>
+                  </Link>
+                </Col>
+              ))}
+            </Row>
+          </>
+        )}
         <Row
           wrap
           style={{

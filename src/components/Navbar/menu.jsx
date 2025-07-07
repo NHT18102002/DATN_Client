@@ -19,6 +19,7 @@ import ApplySeller from "../../pages/ApplySeller/index.jsx";
 import ManageShop from "../../pages/ManageShop/index.jsx";
 import ManageProduct from "../../pages/ManageShop/ManageProduct/index.jsx";
 import ManageOrders from "../../pages/ManageShop/Orders/index.jsx";
+import ManageRevenue from "../../pages/ManageShop/ManageRevenue/index.jsx";
 export const MENU = [
   {
     name: "Home",
@@ -126,5 +127,11 @@ export const MENU = [
     name: "",
     path: "/manage-shop/orders",
     element: <ManageOrders />,
+  },
+
+   {
+    name: "",
+    path: "/manage-shop/revenue",
+    element: <ManageRevenue />,
   },
 ];

@@ -8,7 +8,7 @@ const SearchBar = () => {
   const navigate = useNavigate();
 
   const handleSearch = (value) => {
-    console.log("Từ khóa tìm kiếm:", value);
+    // console.log("Từ khóa tìm kiếm:", value);
     // Gọi API hoặc truyền keyword vào query
     navigate(`/search?keyword=${encodeURIComponent(keyword.trim())}`);
   };

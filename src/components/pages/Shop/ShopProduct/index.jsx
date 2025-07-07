@@ -13,7 +13,7 @@ import {
 import { MessageOutlined, ShopOutlined } from "@ant-design/icons";
 import { formatTimeAgo } from "../../../../utils/string";
 import { averageRate } from "../../../../utils/string";
-const ShopProduct = ({ shop, review }) => {
+const ShopProduct = ({ shop, review, productListRef }) => {
   return (
     <Row
       style={{
@@ -128,9 +128,11 @@ const ShopProduct = ({ shop, review }) => {
               theme={"light"}
               icon={<ShopOutlined style={{ fontSize: 14 }} />}
               style={{
-                width: "100%",
+                width: 135,
                 height: "100%",
                 //   backgroundColor: "#d3e3f5",
+                // size: "small",
+
                 color: "#555",
               }}
               // onClick={() => {
@@ -144,6 +146,9 @@ const ShopProduct = ({ shop, review }) => {
               //     message.error("Out of stock");
               //   }
               // }}
+              onClick={() => {
+                productListRef.current?.scrollIntoView({ behavior: "smooth" });
+              }}s
             >
               Xem Sản Phẩm
             </Button>

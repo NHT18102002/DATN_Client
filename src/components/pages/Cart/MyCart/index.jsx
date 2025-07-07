@@ -198,7 +198,7 @@ const MyCart = ({ cart, onSelectProduct }) => {
           render: (quantity, record) => (
             <InputNumber
               min={1}
-              max={10}
+              // max={}
               defaultValue={record?.number}
               onChange={(value) => handleUpdateCartItem(record?.id, value)}
             />

@@ -90,7 +90,7 @@ const ShopDetail = () => {
         </div>
       ) : (
         <div>
-          <ShopProduct shop={shop} />
+          <ShopProduct shop={shop} productListRef={productListRef} />
           <div
             style={{
               width: "100%",

@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./style.scss";
 import AntImage from "../../../common/AntImage/index.jsx";
-
+import { Link } from "react-router-dom";
 
 const Brands = () => {
   const [brand, setBrand] = useState([]);
@@ -18,12 +18,8 @@ const Brands = () => {
     callApi: getAllShop,
     success: (res) => {
       const firtBrand = res?.data?.items.slice(0, 12) || [];
-      console.log(brand);
-      setBrand([
-        ...firtBrand.map((item) => ({
-          logo: item?.logo,
-        })),
-      ]);
+      // console.log(brand);
+      setBrand(firtBrand);
     },
     error: () => {
       notification.error({
@@ -38,12 +34,12 @@ const Brands = () => {
   }, []);
 
   return (
-    <div style={{ marginBottom: 48, marginLeft: 30, marginRight:30 }}>
+    <div style={{ marginBottom: 48, marginLeft: 30, marginRight: 30 }}>
       <h2 style={{ textAlign: "left" }}>Thương hiệu nổi bật</h2>
       <div>
         <Swiper
           slidesPerView={1}
-          // loop={true}
+          loop={true}
           breakpoints={{
             524: {
               slidesPerView: 2,
@@ -74,24 +70,30 @@ const Brands = () => {
         >
           {brand.map((item, index) => (
             <SwiperSlide
-              style={{ padding: "0px 0px 50px 0px ", marginRight: "0px" , backgroundColor : "rgba(0, 0, 0, 0.00"}}
+              style={{
+                padding: "0px 0px 50px 0px ",
+                marginRight: "0px",
+                backgroundColor: "rgba(0, 0, 0, 0.00",
+              }}
               key={index}
             >
-              <AntImage
-                className="logoShop"
-                style={{
-                  padding: "0 0",
-                  border: "1px solid #ccc",
-                  transition: "all 0.3s ease-in-out",
-                  // borderRadius: 8,
-                }}
-                src={item?.logo}
-                objectFit="contain"
-                layout={"fixed"}
-                preview={false}
-                height={120}
-                width={120}
-              />
+              <Link to={`/shop/${item?.id}`}>
+                <AntImage
+                  className="logoShop"
+                  style={{
+                    padding: "0 0",
+                    border: "1px solid #ccc",
+                    transition: "all 0.3s ease-in-out",
+                    // borderRadius: 8,
+                  }}
+                  src={item?.logo}
+                  objectFit="contain"
+                  layout={"fixed"}
+                  preview={false}
+                  height={120}
+                  width={120}
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -69,7 +69,7 @@ const Shop = () => {
         {loading ? <Spinner/> : (
           <>
             <Row className="shop-products" gutter={windowSize.width >= SM ? [32, 32] : [16, 16]}>
-              {filteredProducts.length === 0 ? currentProducts.map((product) => (
+              {filteredProducts?.length === 0 ? currentProducts.map((product) => (
                 <ProductCard product={product} key={product?.id}/>
               )) : filteredProducts.map((product) => (
                 <ProductCard product={product} key={product?.id}/>
@@ -79,7 +79,7 @@ const Shop = () => {
               <Pagination
                 onChange={(page) => setCurrentPage(page)}
                 pageSize={productsPerPage}
-                total={products.length}
+                total={products?.length}
               />
             </Row>
           </>

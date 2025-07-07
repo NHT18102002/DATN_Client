@@ -18,12 +18,14 @@ import {
 import { formatCurrency } from "../../../utils/string.js";
 import OrderDetailModal from "./OrderDetailModal/index.jsx";
 import ShopSidebar from "../../../components/common/ShopSidebar/index.jsx";
+import OrderStatusPieChart from "../../../components/pages/Shop/Piechart/index.jsx";
 import {
   CloseCircleOutlined,
   InfoCircleOutlined,
   RiseOutlined,
 } from "@ant-design/icons";
 // import { CancelIcon } from "../../assets/Icons/CancelIcon.jsx";
+import { getOrderStatusStats } from "../../../utils/string.js";
 import useCallApi from "../../../hook/useCallApi.js";
 import Spinner from "../../../components/common/Spinner/index.jsx";
 
@@ -31,6 +33,7 @@ const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [statusData, setStatusData] = useState();
   const [filteredData, setFilteredData] = useState([]);
   const [showProcessModal, setShowProcessModal] = useState(false);
   const [showCancelModal, setShowCancelModal] = useState(false);
@@ -40,6 +43,7 @@ const ManageOrders = () => {
     callApi: getMyShopOrder,
     success: (res) => {
       setOrders(res?.data?.items);
+       setStatusData(getOrderStatusStats(res?.data?.items));
     },
     error: () => {
       notification.error({
@@ -166,6 +170,7 @@ const ManageOrders = () => {
                   <Select.Option value="Received">Đã nhận hàng</Select.Option>
                   <Select.Option value="Failure">Đã hủy</Select.Option>
                 </Select>
+         
               </Col>
 
               <Table
