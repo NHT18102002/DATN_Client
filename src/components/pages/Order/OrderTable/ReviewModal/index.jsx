@@ -207,7 +207,7 @@ const ReviewModal = ({ open, onClose, orderItems, orderItemId }) => {
           type="link"
           onClick={() => {
             setEditing(true);
-            console.log(existingReviews);
+            // console.log(existingReviews);
             setEditingReview(review);
             form.setFieldsValue({
               rate: { [review.priceProductDetailId]: review.rate },

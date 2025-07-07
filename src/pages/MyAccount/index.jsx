@@ -24,11 +24,11 @@ const MyAccount = () => {
         onUploadProgress: onProgress,
       })
         .then(res => {
-          console.log({res})
+          // console.log({res})
           if (res) {
             onSuccess(file);
             const data = res?.data?.url
-            console.log({data})
+            // console.log({data})
             form.setFieldValue("avatar", data)
             setFileList([{uid: '-1', name: 'image.png', status: 'done', url: data}])
           } else {
@@ -46,7 +46,7 @@ const MyAccount = () => {
   const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
 
   const handleUpdateInfo = (values) => {
-    console.log({values})
+    // console.log({values})
     const sendData = values?.username !== userInfo?.username ? {
       ...values,
     } : {

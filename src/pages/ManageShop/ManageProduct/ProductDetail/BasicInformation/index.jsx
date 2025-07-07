@@ -31,7 +31,7 @@ const BasicInformation = ({ data }) => {
 
   useEffect(() => {
     fetchCategories();
-    console.log("dfdsfdsf", data);
+    // console.log("dfdsfdsf", data);
   }, [data]);
 
   const initialFormValues = {

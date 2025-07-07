@@ -96,7 +96,7 @@ const ProductDetail = () => {
         );
       }
 
-      console.log("estimateReview", estimateReview);
+      // console.log("estimateReview", estimateReview);
       setEstimateReview(estimateReview);
     },
     error: (err) => {

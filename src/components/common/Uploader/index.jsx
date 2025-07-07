@@ -20,12 +20,12 @@ const Uploader = ({ multiple = false, setFormValue }) => {
           }
         )
         .then((res) => {
-          console.log({ res });
+          // console.log({ res });
           if (res) {
             onSuccess(file);
             const data = res?.data?.url;
             setFormValue(data);
-            console.log(data);
+            // console.log(data);
           } else {
             onError(`${file.name} file upload failed.`);
           }
@@ -42,12 +42,12 @@ const Uploader = ({ multiple = false, setFormValue }) => {
       customRequest={handleUpload}
       onChange={(info) => {
         const { status } = info.file;
-        console.log({ info });
+        // console.log({ info });
         if (status === "done") {
-          console.log("done");
+          // console.log("done");
           message.success(`${info.file.name} tải file thành công.`);
         } else if (status === "error") {
-          console.log("error");
+          // console.log("error");
           message.error(`${info.file.name} tải file thành công.`);
         }
       }}

@@ -25,7 +25,7 @@ const SignIn = () => {
 
         // ✅ Decode token để lấy thông tin user
         const decoded = jwtDecode(token);
-        console.log("decoded token:", decoded);
+        // console.log("decoded token:", decoded);
         const userInfo = {
           userId: decoded.sub,
           username: decoded.username,
@@ -48,7 +48,7 @@ const SignIn = () => {
         navigate("/");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       notification.error({
         message: "Error",
         description: "Login failed, try again!",

@@ -69,11 +69,11 @@ const ApplySeller = () => {
           }
         )
         .then((res) => {
-          console.log({ res });
+          // console.log({ res });
           if (res) {
             onSuccess(file);
             const data = res?.data?.url;
-            console.log({ data });
+            // console.log({ data });
             form.setFieldValue("logo", data);
             setFileList([
               { uid: "-1", name: "image.png", status: "done", url: data },
@@ -120,7 +120,7 @@ const ApplySeller = () => {
         }
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       notification.error({
         message: "Error",
         description: "Không thể tạo cửa hàng",
@@ -147,7 +147,7 @@ const ApplySeller = () => {
         }
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       notification.error({
         message: "Error",
         description: "Can't update user information",

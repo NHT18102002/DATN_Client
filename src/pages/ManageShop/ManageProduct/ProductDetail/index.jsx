@@ -15,7 +15,7 @@ const ProductDetail = ({ open, onClose, data }) => {
     callApi: getProductDetail,
     success: (res) => {
       setProductDetail(res?.data);
-      console.log("hehehehhe");
+      // console.log("hehehehhe");
     },
     error: () => {
       message.error("Can't get product default attributes");

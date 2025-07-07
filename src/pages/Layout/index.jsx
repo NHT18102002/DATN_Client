@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     if (isValidToken(token)) {
       try {
         getMe().then((res) => {
-          console.log(res);
+          // console.log(res);
           dispatch(
             getUserInfo({
               ...res?.data?.data,
@@ -44,11 +44,11 @@ const Layout = ({ children }) => {
           localStorage.setItem("userInfo", JSON.stringify(res?.data?.data));
           try {
             getUserCart(userId).then((res) => {
-              console.log(res);
+              // console.log(res);
               dispatch(getUserCartSuccess(res?.data?.data?.items));
             });
           } catch (err) {
-            console.log(err);
+            // console.log(err);
             notification.error({
               message: "Error",
               description: "Can't get user cart!",

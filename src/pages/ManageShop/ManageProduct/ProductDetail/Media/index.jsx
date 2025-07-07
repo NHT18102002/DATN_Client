@@ -57,7 +57,7 @@ const Media = ({ productDetail }) => {
   const handleUpload = (options) => {
     const { onSuccess, onError, file, onProgress } = options;
     const formData = new FormData();
-    console.log("file", file);
+    // console.log("file", file);
 
     formData.append("file", file);
     formData.append("upload_preset", "pjxg2rxo");

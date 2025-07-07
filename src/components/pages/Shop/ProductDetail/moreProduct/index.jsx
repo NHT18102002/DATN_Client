@@ -40,7 +40,7 @@ const MoreProduct = ({ shop }) => {
     success: (res) => {
       const items = res?.data?.items || [];
       const shuffled = shuffleArray(items);
-      console.log("shuffled", shuffled);
+      // console.log("shuffled", shuffled);
       setProducts(shuffled);
     },
     error: (err) => {

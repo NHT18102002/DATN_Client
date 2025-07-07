@@ -9,7 +9,7 @@ export const isErrorResponse = (response) => {
 };
 
 export const getMessageResponse = (response) => {
-  console.log({response})
+  // console.log({response})
   if (isError(response)) {
     try {
       return JSON.parse(response.message).message;

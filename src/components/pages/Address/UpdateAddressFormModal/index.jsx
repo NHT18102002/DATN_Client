@@ -16,7 +16,7 @@ const UpdateAddressFormModal = ({
   useEffect(() => {
     form.resetFields();
     form.setFieldsValue(data);
-    console.log("dâta", data);
+    // console.log("dâta", data);
   }, [data, form]);
 
   return (

@@ -48,7 +48,7 @@ const ProductInfo = ({ product }) => {
   const navigate = useNavigate();
   const handleIncrement = () => {
     setQuantity(quantity + 1);
-    console.log(stock);
+    // console.log(stock);
   };
 
   const handleAddToCart = () => {
@@ -81,7 +81,7 @@ const ProductInfo = ({ product }) => {
                 dispatch(getUserCartSuccess(res?.data?.data?.items));
               });
             } catch (err) {
-              console.log(err);
+              // console.log(err);
               notification.error({
                 message: "Error",
                 description: "Can't get user cart!",
@@ -92,7 +92,7 @@ const ProductInfo = ({ product }) => {
           }
         });
       } catch (error) {
-        console.log({ error });
+        // console.log({ error });
         message.error("Add to cart failed");
       }
       // console.log(product?.PriceProductDetail?.selection);
@@ -104,11 +104,11 @@ const ProductInfo = ({ product }) => {
   };
 
   const handleChangeSelection = (value, attribute) => {
-    console.log("Chọn:", value, "Thuộc nhóm:", attribute);
+    // console.log("Chọn:", value, "Thuộc nhóm:", attribute);
     const matchedAttribute = product.attributeValues.find(
       (attr) => attr.value == value && attr.attributeId?.name == attribute
     );
-    console.log(matchedAttribute);
+    // console.log(matchedAttribute);
 
     if (matchedAttribute) {
       setSelection((prev) => ({

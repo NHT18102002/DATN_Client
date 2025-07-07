@@ -35,7 +35,7 @@ const MyCart = ({ cart, onSelectProduct }) => {
 
   const handleUpdateCartItem = async (id, number) => {
     const parsedNumber = parseInt(number);
-    console.log(number);
+    // console.log(number);
     if (isNaN(parsedNumber) || parsedNumber <= 0) {
       message.error("Số lượng không hợp lệ");
       return;
@@ -72,7 +72,7 @@ const MyCart = ({ cart, onSelectProduct }) => {
               dispatch(getUserCartSuccess(res?.data?.data?.items));
             });
           } catch (err) {
-            console.log(err);
+            // console.log(err);
             notification.error({
               message: "Error",
               description: "Can't get user cart!",

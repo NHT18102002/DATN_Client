@@ -67,7 +67,7 @@ const Address = () => {
   const { send: fetchAddress, loading } = useCallApi({
     callApi: getUserAddress,
     success: (res) => {
-      console.log(res);
+      // console.log(res);
       setAddressList(res?.data?.items);
     },
     error: (err) => {

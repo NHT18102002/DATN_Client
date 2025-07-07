@@ -223,7 +223,7 @@ const AddDetailProduct = ({ productDetailId, handleCancel }) => {
   const listPriceProductDetails = () => {
     const attributeIds = Object.keys(attributeValuesMap).map(Number); // [21, 22, ...]
     // const attributeValueIds = Object.values(attributeValuesMap).map(Number); // [21, 22, ...]
-    console.log("attributeValueIds", attributeValuesMap);
+    // console.log("attributeValueIds", attributeValuesMap);
     return listPriceProductDetail.map((item) => {
       const selection = {};
       const attributeValueIds = [];

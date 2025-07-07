@@ -165,7 +165,7 @@ const ProductAttribute = ({ productDetail, attributeProduct }) => {
   };
   // Handle update PriceProductDetail (price, quantity)
   const handleUpdatePriceList = async (values) => {
-    console.log("values", values); // Kiểm tra values.details ở đây
+    // console.log("values", values); // Kiểm tra values.details ở đây
 
     try {
       const details = values.details || [];

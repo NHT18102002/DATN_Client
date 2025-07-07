@@ -34,7 +34,7 @@ const UploadAttributeImage = ({
           onSuccess(file);
           setFormValue(imageUrl);
           setPreviewImage(imageUrl); // hiển thị ảnh
-          console.log("setFormValue", setFormValue);
+          // console.log("setFormValue", setFormValue);
           message.success(`${file.name} đã được tải lên.`);
         } else {
           onError(new Error("Tải lên thất bại"));

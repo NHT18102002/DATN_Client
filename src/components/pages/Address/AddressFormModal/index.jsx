@@ -64,7 +64,7 @@ const AddressFormModal = ({visible, handleCancel, handleOk}) => {
               <Select
                 placeholder="Select your city"
                 onChange={(value, option) => {
-                  console.log(option)
+                  // console.log(option)
                   setProvinceId(option?.key)
                 }}
               >

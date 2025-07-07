@@ -60,7 +60,7 @@ const SearchPage = () => {
     callApi: getFilterShops,
     success: (res) => {
       const items = res?.data || [];
-      console.log("items", items);
+      // console.log("items", items);
       setShops(items);
       setShopPagination((prev) => ({
         ...prev,

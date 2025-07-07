@@ -28,7 +28,7 @@ const Category = () => {
     success: (res) => {
       setProduct(res?.data);
       // setShuffledProducts(res?.dat?.products)
-      console.log(res.data);
+      // console.log(res.data);
     },
     error: (err) => {
       notification.error({
@@ -47,12 +47,12 @@ const Category = () => {
       const indexCategory = res?.data?.childCategory?.findIndex(
         (category) => category.id == id
       );
-      console.log("indexCategory", indexCategory);
+      // console.log("indexCategory", indexCategory);
       if (indexCategory >= 5) {
         setShowAllCategories(true);
       }
       // setShuffledProducts(res?.dat?.products)
-      console.log(res.data);
+      // console.log(res.data);
     },
     error: (err) => {
       notification.error({

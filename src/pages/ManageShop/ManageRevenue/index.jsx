@@ -107,7 +107,7 @@ const ManageRevenue = () => {
 
   useEffect(() => {
     fetchOrders();
-    console.log("topProductss", summaryStats);
+    // console.log("topProductss", summaryStats);
   }, []);
 
   const handleSearch = (value) => {

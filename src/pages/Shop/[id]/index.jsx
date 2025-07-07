@@ -66,7 +66,7 @@ const ShopDetail = () => {
       const shuffledProducts = [...(res?.data?.products || [])]
         .sort(() => Math.random() - 0.5)
         .slice(0, 6);
-      console.log(shuffledProducts);
+      // console.log(shuffledProducts);
 
       setShuffledProducts(shuffledProducts);
     },

@@ -149,7 +149,7 @@ const ManageShop = () => {
           if (res) {
             onSuccess(file);
             const data = res?.data?.url;
-            console.log({ data });
+            // console.log({ data });
             form.setFieldValue("logo", data);
 
             setLogoFileList([
@@ -186,7 +186,7 @@ const ManageShop = () => {
   });
 
   const handleUpdateShop = ({ id, ...values }) => {
-    console.log(values);
+    // console.log(values);
 
     try {
       updateShop(id, values).then((res) => {
@@ -215,7 +215,7 @@ const ManageShop = () => {
   const handleDelete = () => {
     try {
       deleteProduct(rowData?.id).then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.status === 200) {
           notification.success({
             message: "Success",
